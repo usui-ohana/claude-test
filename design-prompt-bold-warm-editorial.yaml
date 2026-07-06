@@ -1,0 +1,270 @@
+# ============================================================
+# Design System Prompt (Abstract / Reusable)
+# ============================================================
+# This YAML captures the visual identity, mood, and design
+# principles extracted from a reference site. It is abstracted
+# from specific content, copy, and layout so it can be applied
+# to any project.
+# ============================================================
+
+meta:
+  name: "Bold Warm Editorial"
+  description: >
+    A confident, graphic aesthetic that pairs a warm neutral canvas
+    with saturated, flat color-blocking and heavyweight uppercase
+    typography. Reads as energetic and creative without tipping
+    into chaos — the warm base and strict grid keep it grounded.
+  keywords:
+    - bold
+    - warm
+    - graphic
+    - editorial
+    - confident
+    - flat
+    - color-blocked
+    - high-contrast
+
+# --------------------------------------------------
+# Color Palette
+# --------------------------------------------------
+colors:
+  base:
+    background: "warm neutral (cream / beige / sand tone, not pure white)"
+    ink: "near-black, slightly warm (not pure #000)"
+    description: >
+      The canvas is a warm off-white/beige rather than stark white,
+      and the primary text color is a warm near-black rather than
+      true black. This softens the high-contrast accents without
+      making the palette feel cold or clinical.
+
+  accent_system:
+    strategy: "multi-hue rotation, flat and fully saturated"
+    palette_role:
+      - role: "primary accent"
+        character: "muted botanical green"
+      - role: "secondary accent"
+        character: "warm coral / red-orange"
+      - role: "tertiary accent"
+        character: "deep teal"
+      - role: "quaternary accent"
+        character: "golden mustard / amber"
+    description: >
+      Instead of one brand color, use 3–4 fully saturated flat
+      hues in rotation to color-code categories, tags, and small
+      UI elements (chips, underlines, hover states). No tints or
+      gradients — each accent is used at full strength as a solid
+      fill. Rotate accents by list position/category, not randomly.
+
+  text:
+    primary: "warm near-black for headings and high-emphasis copy"
+    muted: "warm mid-gray/brown for supporting or secondary copy"
+    inverse: "white or near-white for text on dark or accent fills"
+    description: >
+      Only two ink weights are needed: a strong warm-black for
+      anything that should command attention, and a softer warm
+      gray for de-emphasized supporting text. Avoid pure gray or
+      cool-toned grays — keep everything on the warm side.
+
+  emphasis_marker:
+    technique: "solid accent-color highlight block behind inline text"
+    fill: "one accent hue, opaque"
+    text_color: "ink (not inverse) so the highlight reads like a marker/highlighter stroke"
+    description: >
+      A reusable technique for calling out a single word or phrase
+      inline within a large headline: wrap it in a solid block of
+      one accent color (like a highlighter pen), keeping the
+      original text color on top rather than swapping to white.
+
+  inverted_block:
+    background: "ink (near-black)"
+    text: "inverse (near-white), with one accent hue reserved for links/CTAs"
+    description: >
+      Reserve at least one section (commonly a footer or closing
+      block) where the palette flips to a dark ink background.
+      This creates a strong visual bookend and gives high-emphasis
+      links/CTAs a place to pop using an accent color against dark.
+
+# --------------------------------------------------
+# Typography
+# --------------------------------------------------
+typography:
+  font_strategy: "grotesk-sans-first, weight as the primary tool"
+  description: >
+    A single grotesk/neutral sans family carries the whole system.
+    Hierarchy is built through weight and case, not through mixing
+    typefaces. Heavy weights are used deliberately and often, so
+    the type itself reads as a graphic element.
+
+  weight_and_case_rules:
+    display_headline:
+      weight: "very heavy (800–900)"
+      case: "sentence or native case, allowed to break across lines"
+      letter_spacing: "tight to neutral"
+      description: "The single largest, boldest element on the page — treated like a poster headline."
+    labels_and_nav:
+      weight: "heavy (700–800)"
+      case: "uppercase (for latin script)"
+      letter_spacing: "wide/tracked"
+      size: "small"
+      description: "Nav items, eyebrows, category labels, and tags are small but very bold and widely tracked — this contrast (tiny + heavy) is a signature of the style."
+    body_copy:
+      weight: "regular/medium"
+      case: "normal"
+      color: "muted text tone"
+      description: "Body copy stays light-weight and quiet so it never competes with the bold display/label type."
+  accent_typeface:
+    usage: "optional, sparing"
+    character: "a single script/handwritten face may appear once as a decorative flourish (e.g. a signature-style word), never for body or nav"
+
+# --------------------------------------------------
+# Layout Philosophy (principles only — no fixed grid/copy)
+# --------------------------------------------------
+layout_principles:
+  - name: "Edge-to-edge over padded cards"
+    description: >
+      Media/work items sit flush against each other with a hairline
+      gap (a few pixels) rather than sitting in padded, bordered
+      cards. The grid itself becomes a graphic pattern.
+
+  - name: "Sharp geometry, not soft"
+    description: >
+      Corners stay square. Avoid rounded corners and pill shapes —
+      they undercut the bold/graphic tone. Sharpness is a deliberate
+      counterpart to the soft/rounded "minimal" style.
+
+  - name: "Progressive disclosure on hover"
+    description: >
+      Secondary information (captions, meta detail) is hidden by
+      default and revealed on hover via a dark gradient scrim, so
+      the resting state stays purely visual/graphic.
+
+  - name: "Generous top-of-page air, dense below"
+    description: >
+      The opening viewport favors open space around a single bold
+      statement; density and grid tightness increase further down
+      the page once attention is already captured.
+
+# --------------------------------------------------
+# Component Styles
+# --------------------------------------------------
+components:
+  tag_or_chip:
+    shape: "square/rectangular, sharp corners"
+    fill: "solid accent color (opaque, rotated per item)"
+    text: "inverse or ink depending on contrast, always bold + uppercase"
+    description: >
+      Tags are small solid-color blocks, not outlined pills. Color
+      itself communicates category; no icon or border is needed.
+
+  media_grid_item:
+    corner_radius: "none"
+    gap_between_items: "hairline (a few px), not a full gutter"
+    hover_state: "subtle scale-up of media + gradient scrim revealing caption"
+    description: >
+      Treat the grid as a single continuous graphic surface rather
+      than a set of separated cards.
+
+  section_heading:
+    style: "small, bold, uppercase, wide tracking, underlined with a solid rule"
+    description: >
+      Section labels are treated more like index tabs than large
+      titles — the visual weight budget is spent on the hero
+      headline instead.
+
+  navigation:
+    style: "borderless, transparent, floats directly on the base background color"
+    link_style: "bold uppercase small text; accent color on hover/active"
+    description: >
+      No nav bar chrome (no background box or shadow) — it reads as
+      part of the page rather than a fixed UI layer.
+
+# --------------------------------------------------
+# Shadows & Depth
+# --------------------------------------------------
+shadows:
+  philosophy: "flat by default; depth comes from color contrast, not elevation"
+  usage: "avoid drop shadows almost entirely; where hierarchy is needed, use a solid dark scrim/overlay instead of a soft shadow"
+
+# --------------------------------------------------
+# Animation
+# --------------------------------------------------
+animations:
+  default_duration: "0.3s–0.4s"
+  easing: "ease"
+  effects:
+    hover_zoom:
+      transform: "slight scale-up (~1.02–1.05x) on media"
+    caption_reveal:
+      opacity: "0 → 1"
+      transform: "small upward slide"
+  description: >
+    Motion is restrained and purely functional (reveal-on-hover),
+    never decorative or attention-seeking on its own.
+
+# --------------------------------------------------
+# Mood & Atmosphere
+# --------------------------------------------------
+mood:
+  overall: >
+    Feels like a confident creative studio's poster wall: warm,
+    tactile, unafraid of saturated color, but organized enough to
+    stay legible and professional rather than chaotic.
+  adjectives:
+    - bold
+    - warm
+    - graphic
+    - confident
+    - energetic
+    - grounded
+    - editorial
+    - punchy
+  visual_metaphors:
+    - "A hand-pulled screen-print poster"
+    - "A highlighter mark on a warm-toned notebook page"
+    - "A gallery wall of flush-mounted prints"
+  avoid:
+    - "Pastel or desaturated color systems"
+    - "Rounded corners / pill-shaped UI"
+    - "Soft diffused shadows or glassmorphism"
+    - "Cool grays or pure white backgrounds"
+    - "Delicate serif-only typography as the primary voice"
+
+# --------------------------------------------------
+# Design Principles
+# --------------------------------------------------
+principles:
+  - name: "Weight and case build hierarchy, not size alone"
+    description: >
+      Small-but-heavy uppercase labels can carry as much visual
+      authority as large text — hierarchy comes from a mix of
+      size, weight, and tracking, not size in isolation.
+
+  - name: "Warm neutral canvas, saturated accents"
+    description: >
+      A warm off-white/beige base allows fully saturated flat
+      accent colors to feel vivid without the page becoming
+      visually loud overall.
+
+  - name: "Color codes meaning"
+    description: >
+      Each rotating accent hue should map consistently to a
+      category or type of content, so color becomes functional,
+      not just decorative.
+
+  - name: "One dark inversion as a bookend"
+    description: >
+      Flipping to a dark ink block once (e.g., for a closing or
+      footer section) gives the palette a strong anchor and a
+      natural stopping point.
+
+  - name: "Sharp over soft"
+    description: >
+      Square corners, flat fills, and hairline gaps signal a
+      graphic/poster sensibility, deliberately opposite to
+      rounded, pastel, shadow-heavy "minimal" systems.
+
+  - name: "Reveal, don't clutter"
+    description: >
+      Keep the resting state graphic and quiet; let hover/interaction
+      states carry secondary detail (captions, metadata) so nothing
+      competes with the primary visual at first glance.

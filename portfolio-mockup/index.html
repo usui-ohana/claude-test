@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OHANA | Creative Portfolio</title>
+<meta name="description" content="イラスト制作・ロゴデザイン・動画編集を手がけるクリエイター OHANA のポートフォリオサイト。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OHANA | Creative Portfolio">
+<meta property="og:description" content="イラスト制作・ロゴデザイン・動画編集を手がけるクリエイター OHANA のポートフォリオサイト。">
+<meta property="og:image" content="assets/work-illustration.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23efe6d8'/%3E%3Ctext x='50' y='68' font-size='60' font-family='Arial, sans-serif' font-weight='900' text-anchor='middle' fill='%23e2574c'%3EO%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #efe6d8;
+    --ink: #141311;
+    --sub: #6f6658;
+    --line: rgba(20,19,17,0.15);
+    --green: #4b6b45;
+    --coral: #e2574c;
+    --teal: #2f7d78;
+    --mustard: #e6a730;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "Tsukushi A Round Gothic", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 5%;
+  }
+  nav .logo { font-weight: 800; letter-spacing: 0.14em; font-size: 1rem; text-transform: uppercase; }
+  nav ul { display: flex; gap: 30px; list-style: none; }
+  nav a { color: var(--ink); text-decoration: none; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  nav a:hover { color: var(--coral); }
+
+  section { padding: 130px 5%; max-width: 1200px; margin: 0 auto; }
+
+  .hero {
+    max-width: none;
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 140px 5% 60px;
+  }
+  .hero-tags {
+    display: flex; flex-direction: column; gap: 4px;
+    font-weight: 800; font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .hero-copy { max-width: 920px; margin-top: 60px; }
+  .hero-copy p.eyebrow { color: var(--sub); letter-spacing: 0.3em; font-size: 0.72rem; margin-bottom: 22px; text-transform: uppercase; font-weight: 700; }
+  .hero-copy h1 { font-size: clamp(2rem, 5.4vw, 4.6rem); font-weight: 800; line-height: 1.25; letter-spacing: -0.01em; }
+  .hero-copy h1 .mark { background: var(--mustard); padding: 0 8px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .hero-copy p.desc { max-width: 560px; color: var(--sub); font-size: 0.98rem; margin-top: 28px; }
+
+  h2.section-title {
+    font-size: 0.8rem; margin-bottom: 60px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800;
+    padding-bottom: 20px; border-bottom: 2px solid var(--ink);
+  }
+
+  .about-grid { display: grid; grid-template-columns: 240px 1fr; gap: 60px; align-items: start; }
+  .about-grid img { width: 100%; display: block; }
+  .about-grid .tools { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag {
+    padding: 8px 16px; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase;
+    color: #fff;
+  }
+  .tag:nth-child(4n+1) { background: var(--green); }
+  .tag:nth-child(4n+2) { background: var(--coral); }
+  .tag:nth-child(4n+3) { background: var(--teal); }
+  .tag:nth-child(4n+4) { background: var(--mustard); color: var(--ink); }
+
+  .works-category { margin-bottom: 90px; }
+  .works-category:last-child { margin-bottom: 0; }
+  .works-category .cat-head {
+    display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 26px;
+    border-bottom: 3px solid var(--ink); padding-bottom: 14px;
+  }
+  .works-category h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.14em; font-weight: 800; }
+  .works-category .date { font-size: 0.72rem; color: var(--sub); letter-spacing: 0.05em; font-weight: 700; }
+
+  .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 4px; }
+  .work-card { position: relative; background: var(--ink); overflow: hidden; }
+  .work-card img, .work-card video {
+    width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover;
+    transition: transform .4s ease;
+  }
+  .work-card:hover img, .work-card:hover video { transform: scale(1.04); }
+  .work-card .caption {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 20px; color: #fff;
+    background: linear-gradient(to top, rgba(0,0,0,.82), rgba(0,0,0,0));
+    transform: translateY(8px); opacity: 0; transition: all .3s ease;
+    pointer-events: none;
+  }
+  .work-card:hover .caption { opacity: 1; transform: translateY(0); }
+  .work-card .caption h4 { font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .work-card .caption p { font-size: 0.78rem; color: #e5e0d8; }
+
+  .skills-list { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  footer.contact {
+    text-align: center; padding: 140px 5% 100px; background: var(--ink); color: #fff;
+  }
+  footer.contact h2 { font-size: 0.8rem; margin-bottom: 26px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; color: #cfc7b9; }
+  footer.contact a.mail { color: var(--mustard); font-size: 1.4rem; font-weight: 800; text-decoration: none; letter-spacing: 0.01em; }
+  footer.contact a.mail:hover { color: var(--coral); }
+  footer.contact .sub { margin-top: 40px; color: #8b8377; font-size: 0.7rem; letter-spacing: 0.05em; }
+
+  @media (max-width: 720px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .hero-copy { margin-top: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">OHANA</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#works">Works</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-tags">
+    <span>Illustration</span>
+    <span>Logo / Branding</span>
+    <span>Video Editing</span>
+    <span>AI-Assisted Design</span>
+  </div>
+  <div class="hero-copy">
+    <p class="eyebrow">2026.7.3 —</p>
+    <h1>デザインと<span class="mark">映像</span>で、伝わる体験をつくる。</h1>
+    <p class="desc">イラスト制作・ロゴデザイン・動画編集を手がけるクリエイター OHANA のポートフォリオです。Illustrator と Premiere Pro を軸に、AIツールも活用しながら制作しています。</p>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About</h2>
+  <div class="about-grid">
+    <img src="assets/profile.jpg" alt="制作風景" loading="lazy">
+    <div>
+      <p>グラフィックデザインと動画編集を専門に活動しています。植物モチーフのイラストレーションから、ブランドロゴ、映像編集まで幅広く対応。細部の質感と伝わりやすさを大切に制作しています。</p>
+      <div class="tools">
+        <span class="tag">Illustrator</span>
+        <span class="tag">Premiere Pro</span>
+        <span class="tag">Canva</span>
+        <span class="tag">生成AIツール</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <h2 class="section-title">Works</h2>
+
+  <div class="works-category">
+    <div class="cat-head">
+      <h3>Video Editing</h3>
+      <span class="date">2026.7 —</span>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <video controls preload="metadata" src="assets/reel-01.mp4"></video>
+        <div class="caption">
+          <h4>Edit Reel 01</h4>
+          <p>Premiere Pro による編集作品</p>
+        </div>
+      </div>
+      <div class="work-card">
+        <video controls preload="metadata" src="assets/reel-02.mp4"></video>
+        <div class="caption">
+          <h4>Edit Reel 02</h4>
+          <p>Premiere Pro による編集作品</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="works-category">
+    <div class="cat-head">
+      <h3>Graphic / Illustration</h3>
+      <span class="date">2026.5 —</span>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="assets/work-illustration.jpg" alt="Summer leaf イラストセット" loading="lazy">
+        <div class="caption">
+          <h4>Summer leaf</h4>
+          <p>モンステラ・ホオノキ・ユーカリ・ヤシの葉を使ったボタニカルフレーム / Illustrator CS5</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="works-category">
+    <div class="cat-head">
+      <h3>Logo / Branding</h3>
+      <span class="date">2026.5 —</span>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <img src="assets/work-logo.jpg" alt="ロゴデザイン" loading="lazy">
+        <div class="caption">
+          <h4>Flower Emblem Logo</h4>
+          <p>花・鍵盤・三日月をモチーフにしたエンブレム型ロゴ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills-list">
+    <span class="tag">グラフィックデザイン</span>
+    <span class="tag">イラストレーション</span>
+    <span class="tag">ロゴ / ブランディング</span>
+    <span class="tag">動画編集</span>
+    <span class="tag">モーショングラフィックス基礎</span>
+    <span class="tag">AIツール活用</span>
+  </div>
+</section>
+
+<footer class="contact" id="contact">
+  <h2>Contact</h2>
+  <a class="mail" href="mailto:usui.ic.ohana@gmail.com">usui.ic.ohana@gmail.com</a>
+  <p class="sub">© 2026 OHANA. This is a minimal mockup for structure review.</p>
+</footer>
+
+</body>
+</html>

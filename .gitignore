@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .claude/settings.local.json
+
+# raw/uncompressed source assets (kept locally only; web-optimized copies are committed)
+portfolio-mockup/assets/*-original.*
