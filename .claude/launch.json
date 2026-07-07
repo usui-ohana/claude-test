@@ -6,6 +6,18 @@
       "runtimeExecutable": "python",
       "runtimeArgs": ["-m", "http.server", "8791", "--bind", "127.0.0.1", "--directory", "portfolio-mockup"],
       "port": 8791
+    },
+    {
+      "name": "profile-site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8792", "--bind", "127.0.0.1", "--directory", "profile-site"],
+      "port": 8792
+    },
+    {
+      "name": "ai-work-portfolio",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8793", "--bind", "127.0.0.1", "--directory", "ai-work-portfolio"],
+      "port": 8793
     }
   ]
 }

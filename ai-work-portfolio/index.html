@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIエージェントと開発する。| Agent Teams Case Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="eyebrow">CLAUDE CODE — MULTI-AGENT WORKFLOW</p>
+    <h1 class="hero-title">
+      AIエージェントと開発する。<br>
+      <span class="highlight">Agent Teams</span> を実際に動かしてみた記録。
+    </h1>
+    <p class="hero-subtitle">Claude Codeのマルチエージェント機能を使った開発ワークフローの実演記録</p>
+  </header>
+
+  <main>
+    <section class="intro" id="intro">
+      <p class="section-label">CASE STUDY</p>
+      <p class="intro-text">
+        本ページは、Claude Codeの「Agent Teams」機能を初めて触ってみた記録をまとめたケーススタディです。
+        単一のAIとの一問一答ではなく、複数のAIチームメイトが役割を分担しながら並行して作業する様子を、
+        実際のスクリーンショットとともに振り返ります。
+      </p>
+      <p class="intro-text">
+        並行タスク処理・マルチエージェントレビュー・優先度付けによる統合という3つの実演を通して、
+        「AIチームに仕事を任せる」とはどういうことかを具体的に見ていきます。
+      </p>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <p class="section-label">DEMONSTRATION GALLERY</p>
+
+      <article class="gallery-item" data-accent="green">
+        <div class="gallery-media">
+          <img src="images/01-agent-teams-basic.png" alt="Agent Teamsで2人のチームメイトが並行してタスクを実行している様子のスクリーンショット">
+          <div class="gallery-caption">
+            <p class="gallery-label">BASIC / 並行タスク処理</p>
+            <p class="gallery-desc">
+              Claude CodeのAgent Teams機能を初めて試した様子。2人のチームメイトが同時に立ち上がり、
+              一方は「今日の日付から豆知識を調べる」、もう一方は「プロジェクトのファイル一覧を調査する」という
+              別々のタスクを並行実行。両者の結果をリーダーが統合して1つの報告にまとめている。
+            </p>
+            <p class="gallery-learning">
+              <span class="learning-tag">学び</span>
+              単一のAIに順番に頼むのではなく、独立したタスクを並列で動かして時間を短縮できることを確認。
+            </p>
+          </div>
+        </div>
+        <p class="gallery-label-static">BASIC / 並行タスク処理</p>
+      </article>
+
+      <article class="gallery-item" data-accent="coral">
+        <div class="gallery-media">
+          <img src="images/02-agent-teams-review.png" alt="3人のチームメイトが役割分担して既存サイトをレビューしている様子のスクリーンショット">
+          <div class="gallery-caption">
+            <p class="gallery-label">INTERMEDIATE / マルチエージェントレビュー</p>
+            <p class="gallery-desc">
+              既存の自己紹介サイト（profile-siteプロジェクト）を、3人のチームメイトが役割分担してレビューしている場面。
+              右側にはブラウザプレビューで実際に動いているサイトが表示されており、
+              AIが実物を見ながら評価していることがわかる。
+            </p>
+            <p class="gallery-learning">
+              <span class="learning-tag">学び</span>
+              コードだけでなく実際の画面表示を確認しながら、複数視点で同時レビューできる。
+            </p>
+          </div>
+        </div>
+        <p class="gallery-label-static">INTERMEDIATE / マルチエージェントレビュー</p>
+      </article>
+
+      <article class="gallery-item" data-accent="teal">
+        <div class="gallery-media">
+          <img src="images/03-agent-teams-priority.png" alt="3人のレビュー結果を優先度別に整理した統合レポートのスクリーンショット">
+          <div class="gallery-caption">
+            <p class="gallery-label">INTERMEDIATE / 優先度付け統合レポート</p>
+            <p class="gallery-desc">
+              3人のレビュー結果を、優先度「高・中・低」に整理して1つの最終報告にまとめた画面。
+              個々の指摘がバラバラのままではなく、意思決定に使える形に構造化されている。
+            </p>
+            <p class="gallery-learning">
+              <span class="learning-tag">学び</span>
+              複数エージェントの発散的な指摘を、収束させて実行可能なアクションリストに変換するプロセスを実演。
+            </p>
+          </div>
+        </div>
+        <p class="gallery-label-static">INTERMEDIATE / 優先度付け統合レポート</p>
+      </article>
+    </section>
+
+    <section class="takeaways" id="takeaways">
+      <p class="section-label">まとめ・学び</p>
+      <ul class="chip-list">
+        <li class="chip" data-accent="green">単一AIより並列実行で時短</li>
+        <li class="chip" data-accent="coral">実画面を見ながら複数視点でレビュー</li>
+        <li class="chip" data-accent="teal">発散した指摘を優先度で収束・構造化</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-heading">AI Work Portfolio</p>
+    <p class="footer-text">Claude Code Agent Teams を使った開発ワークフローの実演記録です。</p>
+    <a class="footer-cta" href="https://github.com/usui-ohana/claude-test" target="_blank" rel="noopener">GitHubで見る &rarr;</a>
+    <p class="footer-copyright">&copy; <span id="year"></span> AI Work Portfolio</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
