@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
   <title>AIエージェントと開発する。| Agent Teams Case Study</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +37,7 @@
 
       <article class="gallery-item" data-accent="green">
         <div class="gallery-media">
-          <img src="images/01-agent-teams-basic.png" alt="Agent Teamsで2人のチームメイトが並行してタスクを実行している様子のスクリーンショット">
+          <img src="images/01-agent-teams-basic.png" alt="Agent Teamsで2人のチームメイトが並行してタスクを実行している様子のスクリーンショット" width="1405" height="1005" decoding="async">
           <div class="gallery-caption">
             <p class="gallery-label">BASIC / 並行タスク処理</p>
             <p class="gallery-desc">
@@ -55,7 +56,7 @@
 
       <article class="gallery-item" data-accent="coral">
         <div class="gallery-media">
-          <img src="images/02-agent-teams-review.png" alt="3人のチームメイトが役割分担して既存サイトをレビューしている様子のスクリーンショット">
+          <img src="images/02-agent-teams-review.png" alt="3人のチームメイトが役割分担して既存サイトをレビューしている様子のスクリーンショット" width="1825" height="1011" loading="lazy" decoding="async">
           <div class="gallery-caption">
             <p class="gallery-label">INTERMEDIATE / マルチエージェントレビュー</p>
             <p class="gallery-desc">
@@ -74,7 +75,7 @@
 
       <article class="gallery-item" data-accent="teal">
         <div class="gallery-media">
-          <img src="images/03-agent-teams-priority.png" alt="3人のレビュー結果を優先度別に整理した統合レポートのスクリーンショット">
+          <img src="images/03-agent-teams-priority.png" alt="3人のレビュー結果を優先度別に整理した統合レポートのスクリーンショット" width="1820" height="1015" loading="lazy" decoding="async">
           <div class="gallery-caption">
             <p class="gallery-label">INTERMEDIATE / 優先度付け統合レポート</p>
             <p class="gallery-desc">
@@ -92,7 +93,7 @@
 
       <article class="gallery-item" data-accent="mustard">
         <div class="gallery-media">
-          <img src="images/04-agent-teams-role-plan.png" alt="UX担当・アーキテクチャ担当・Devil's Advocate担当という3つの役割に分かれたチームメイトが、それぞれの計画を提示し承認を求めている画面のスクリーンショット">
+          <img src="images/04-agent-teams-role-plan.png" alt="UX担当・アーキテクチャ担当・Devil's Advocate担当という3つの役割に分かれたチームメイトが、それぞれの計画を提示し承認を求めている画面のスクリーンショット" width="1826" height="1008" loading="lazy" decoding="async">
           <div class="gallery-caption">
             <p class="gallery-label">ADVANCED / 役割分担と承認ゲート</p>
             <p class="gallery-desc">
@@ -110,7 +111,7 @@
 
       <article class="gallery-item" data-accent="mustard">
         <div class="gallery-media">
-          <img src="images/05-agent-teams-synthesis.png" alt="UX・アーキテクチャ・Devil's Advocateの3つの視点を統合し、条件付きの結論を導き出した最終レポートのスクリーンショット">
+          <img src="images/05-agent-teams-synthesis.png" alt="UX・アーキテクチャ・Devil's Advocateの3つの視点を統合し、条件付きの結論を導き出した最終レポートのスクリーンショット" width="1827" height="1012" loading="lazy" decoding="async">
           <div class="gallery-caption">
             <p class="gallery-label">ADVANCED / 複数視点の統合判断</p>
             <p class="gallery-desc">
@@ -141,7 +142,7 @@
   <footer class="site-footer">
     <p class="footer-heading">AI Work Portfolio</p>
     <p class="footer-text">Claude Code Agent Teams を使った開発ワークフローの実演記録です。</p>
-    <a class="footer-cta" href="https://github.com/usui-ohana/claude-test" target="_blank" rel="noopener">GitHubで見る &rarr;</a>
+    <a class="footer-cta" href="https://github.com/usui-ohana/claude-test" target="_blank" rel="noopener noreferrer">GitHubで見る &rarr;</a>
     <p class="footer-copyright">&copy; <span id="year"></span> AI Work Portfolio</p>
   </footer>
 
